@@ -29,7 +29,7 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(ProductValidator))]
-        [SecuredOperation("")]
+        [SecuredOperation("product.add,admin")]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(
