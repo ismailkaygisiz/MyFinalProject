@@ -28,8 +28,8 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-        [SecuredOperation("")]
         [ValidationAspect(typeof(ProductValidator))]
+        [SecuredOperation("")]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(
