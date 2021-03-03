@@ -130,7 +130,14 @@ namespace Business.Concrete
         [TransactionScopeAspect]
         public IResult AddTransactionalTest(Product product)
         {
-            throw new System.NotImplementedException();
+            Add(product);
+            if (product.UnitPrice < 10)
+            {
+                throw new System.Exception("");
+            }
+
+            Add(product);
+            return null;
         }
     }
 }
