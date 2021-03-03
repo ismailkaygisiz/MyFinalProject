@@ -24,8 +24,8 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-        [ValidationAspect(typeof(ProductValidator))]
         [SecuredOperation("product.add,admin")]
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(
