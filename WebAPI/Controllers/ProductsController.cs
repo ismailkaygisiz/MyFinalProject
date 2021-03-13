@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using System.Threading;
+using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -79,7 +80,7 @@ namespace WebAPI.Controllers
         public IActionResult TestProduct(Product product)
         {
             var result =_productService.AddTransactionalTest(product);
-            return Ok(result);   
+            return Ok(result);
         }
     }
 }
